@@ -30,6 +30,6 @@ function zipdir
 
 
 # Brew completion
-if [ -f /Users/trastle/Scripts/brew-completion.sh ]; then
-    . /Users/trastle/Scripts/brew-completion.sh
+if [ -f ~/Scripts/brew-completion.sh ]; then
+    . ~/Scripts/brew-completion.sh
 fi
