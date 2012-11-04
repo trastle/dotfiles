@@ -17,3 +17,11 @@ set selectmode=mouse
 set backupdir=/tmp
 set directory=/tmp
 
+set modelines=0         " CVE-2007-2438
+set backspace=2         " more powerful backspacing
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup
+
