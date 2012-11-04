@@ -12,7 +12,8 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 alias rebash="source ~/.bashrc"
 alias ll="ls -la"
 alias ls='ls -G'
-
+alias quit='exit'
+alias reboot='shutdown -r now'
 
 function zipdir
 {
