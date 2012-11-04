@@ -22,7 +22,7 @@ function zipdir
        echo " "
        echo "INCORRECT USAGE:"
        echo "Expected: zipdir source destination"
-       echo "Ezample:  zipdir  ./example ./example.zip"
+       echo "Example:  zipdir  ./example ./example.zip"
        echo " "
     else
        zip -r "$2" "$1"
