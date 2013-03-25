@@ -14,6 +14,7 @@ alias ll="ls -la"
 alias ls='ls -G'
 alias quit='exit'
 alias reboot='shutdown -r now'
+alias installhomebrew='ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"'
 
 function zipdir
 {
