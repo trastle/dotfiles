@@ -30,17 +30,17 @@ function zipdir
 }
 
 # Git tab completion
-if [ -f ~/.git-completion.bash ]; 
-then 
-    source ~/.git-completion.bash
-else
+if [ ! -f ~/.git-completion.bash ]; then 
     curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 fi
+source ~/.git-completion.bash
 
-# Brew completion
-if [ -f ~/Scripts/brew-completion.sh ]; then
-    . ~/Scripts/brew-completion.sh
+# homebrew tab completion
+if [ ! -f ~/.homebrew-completion.bash ]; then 
+   curl https://gist.github.com/ktheory/774554/raw/b5552619c8dcac38f954bcfb7bde9ff879de46fc/brew_completer.sh -o ~/.homebrew-completion.bash
 fi
+source ~/.homebrew-completion.bash
+
 
 # Git branch in prompt.
 parse_git_branch() {
