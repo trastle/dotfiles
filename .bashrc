@@ -16,6 +16,14 @@ alias quit='exit'
 alias reboot='shutdown -r now'
 alias installhomebrew='ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"'
 
+# improve bash history
+shopt -s histappend
+# Store 10000 commands in bash history
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+# Don't put duplicate lines in the history
+export HISTCONTROL=ignoredups
+
 alias gut="git" # fat fingers much
 alias gst="git status"
 
