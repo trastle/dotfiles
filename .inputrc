@@ -1,0 +1,39 @@
+# --------------------------------------------------------------
+# Change the default behaviour of some keys in the terminal.
+#
+# Started from the blog post at:
+# http://www.twam.info/software/tune-terminal-in-os-x-lion
+#
+# For more key codes take a look at wikipedia:
+# http://en.wikipedia.org/wiki/ANSI_escape_code
+# --------------------------------------------------------------
+
+#Do not bell on tab-completion
+set bell-style none
+# disable stripping of 8bit characters
+set convert-meta off
+# enable 8bit output
+set output-meta on
+# show multiple possibilities on tab completion
+set show-all-if-ambiguous on
+# set file completion case-insensitive
+set completion-ignore-case on
+# completes names which are symbolic links to directories with slash appended
+set mark-symlinked-directories on
+
+# Key map
+# -------
+
+# HOME
+# Manually set the terminal keymap for SHIFT + LEFT to "\033[1~"
+"\e[1~": beginning-of-line
+
+# END
+# Manually set the terminal keymap for SHIFT + RIGHT to "\033[4~"
+"\e[4~": end-of-line
+
+#"\e[5~": history-search-backward
+#"\e[6~": history-search-forward
+#"\e[3~": delete-char
+#"\e[5C": forward-word
+#"\e[5D": backward-word

@@ -33,6 +33,11 @@ function zipdir
     fi
 }
 
+function searchdir
+{
+    find . -exec grep -H "$1" {} \;
+}
+
 # Git tab completion
 if [ ! -f ~/.git-completion.bash ]; then 
     curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
