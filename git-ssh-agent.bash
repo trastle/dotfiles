@@ -1,3 +1,7 @@
+# SSH setup for git, originally copied from:
+# https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git
+# Some changes made to deal with my non-default ssh key names.
+
 SSH_ENV="$HOME/.ssh/environment"
   
 # start the ssh-agent
