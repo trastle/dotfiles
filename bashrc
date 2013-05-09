@@ -14,7 +14,6 @@ alias ll="ls -la"
 alias ls='ls -G'
 alias quit='exit'
 alias reboot='shutdown -r now'
-alias installhomebrew='ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"'
 
 # improve bash history
 shopt -s histappend
@@ -57,15 +56,9 @@ if [ ! -f ~/.git-completion.bash ]; then
 fi
 source ~/.git-completion.bash
 
-# homebrew tab completion
-if [ ! -f ~/.homebrew-completion.bash ]; then 
-   curl https://gist.github.com/ktheory/774554/raw/b5552619c8dcac38f954bcfb7bde9ff879de46fc/brew_completer.sh -o ~/.homebrew-completion.bash
-fi
-source ~/.homebrew-completion.bash
 
-
-if [  -f ~/.local.bash ]; then 
-    source ~/.local.bash
+if [  -f ~/.bashrc_local ]; then 
+    source ~/.bashrc_local
 fi
 
 # Git branch in prompt.
