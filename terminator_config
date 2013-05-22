@@ -3,6 +3,7 @@
 # --------------------------------------------------------------------
 [global_config]
 focus = system
+maximise = True
 
 [keybindings]
 
@@ -13,9 +14,14 @@ go_left = <Alt>Left
 go_right = <Alt>Right
 
 # Split the terminal int onew tiles
-split_horiz = <Ctrl><Shift>O
-split_vert = <Ctrl><Shift>E
+split_horiz = <Alt><Shift>Down
+split_vert = <Alt><Shift>Right
 
+# Resize
+resize_down = <Shift>Down
+resize_up = <Shift>Up
+resize_left = <Shift>Left
+resize_right = <Shift>Right
 
 [profiles]
 

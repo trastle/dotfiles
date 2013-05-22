@@ -19,3 +19,5 @@ doLink bashrc
 doLink vimrc
 doLink inputrc
 doLink git-ssh-agent.bash
+
+mkdir -p ~/.config/terminator
