@@ -1,0 +1,29 @@
+# --------------------------------------------------------------------
+# Config for Terminator in Gnome
+# --------------------------------------------------------------------
+[global_config]
+focus = system
+
+[keybindings]
+
+# Move between terminals
+go_up = <Alt>Up
+go_down = <Alt>Down
+go_left = <Alt>Left
+go_right = <Alt>Right
+
+# Split the terminal int onew tiles
+split_horiz = <Ctrl><Shift>O
+split_vert = <Ctrl><Shift>E
+
+
+[profiles]
+
+[[default]]
+font = Fixed 10
+background_color = "#000000" 
+foreground_color = "#FFFFFF" 
+scrollback_lines = "10000"
+cursor_blink = True
+
+custom_command = "echo \"foo#bar\"" #Final comment - this will work as expected.
