@@ -1,0 +1,15 @@
+# -----------------------------------------------
+# Global gitignore file, ignored in all repos.
+# -----------------------------------------------
+
+# Mac OS X hidden files
+.DS_Store
+
+# Vim swap files
+.*.sw?
+
+# IntelliJ
+.idea/*
+.idea_modules/*
+*.iml
+

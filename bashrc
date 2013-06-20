@@ -99,18 +99,26 @@ function get_svn_branch() {
         local svn_branch=$(svn info | grep URL | sed -e 's/.*\///')
 
         if [ "$svn_branch" != "" ]; then
-            local trimmed=`echo -ne "$svn_branch" | sed -e 's/^ *//g' -e 's/ *$//g'`
-            echo -ne " SVN=$trimmed"
+            #local trimmed=`echo -ne "$svn_branch" | sed -e 's/^ *//g' -e 's/ *$//g'`
+            echo -ne " S=$svn_branch"
         fi
     fi
 }
 
 # Parse the git branch for use in the prompt
 function get_git_branch() {
-    local git_branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'`
+    local git_branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
     if [ "$git_branch" != "" ]; then
-        local trimmed=`echo -ne "$git_branch" | sed -e 's/^ *//g' -e 's/ *$//g'`
-        echo -ne " GIT=$trimmed"
+        #local trimmed=`echo -ne "$git_branch" | sed -e 's/^ *//g' -e 's/ *$//g'`
+        echo -ne " G=$git_branch"
+    fi
+}
+
+function get_gitsvn_branch() {
+    local gitsvn_branch=`git svn info 2> /dev/null | grep URL: | awk '{ print $2}' | sed s~^.*/~~g`
+    if [ "$gitsvn_branch" != "" ]; then
+        #local trimmed=`echo -ne "$gitsvn_branch" | sed -e 's/^ *//g' -e 's/ *$//g'`
+        echo -ne " GS=$gitsvn_branch"
     fi
 }
 
@@ -118,6 +126,7 @@ function get_git_branch() {
 function get_scm_branch(){
     get_svn_branch
     get_git_branch
+    get_gitsvn_branch
 }
 
 export PS1="\u@\h\[\033[32m\]\$(get_scm_branch)\[\033[00m\] \W $ "
