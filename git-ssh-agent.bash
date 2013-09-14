@@ -38,7 +38,7 @@ function git-ssh-add-keys {
 if [ -n "$SSH_AGENT_PID" ]; then
     ps -ef | grep "$SSH_AGENT_PID" | grep ssh-agent > /dev/null
     if [ $? -eq 0 ]; then
-    test_identities
+    git-ssh-test-identities
     fi
 # if $SSH_AGENT_PID is not properly set, we might be able to load one from
 # $SSH_ENV
