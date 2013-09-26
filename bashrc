@@ -51,6 +51,11 @@ if [ -f ~/.git-ssh-agent.bash ]; then
    source ~/.git-ssh-agent.bash
 fi
 
+# OSX ssh auto complete
+if [ -f ~/.ssh-complete.bash ]; then 
+   source ~/.ssh-complete.bash
+fi
+
 # Git tab completion
 if [ ! -f ~/.git-completion.bash ]; then 
     curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
@@ -63,7 +68,7 @@ if [ ! -f ~/.homebrew-completion.bash ]; then
 fi
 source ~/.homebrew-completion.bash
 
-
+# Add the local system bash setup
 if [  -f ~/.local.bash ]; then 
     source ~/.local.bash
 fi
