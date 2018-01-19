@@ -46,23 +46,23 @@ function searchdir
 }
 
 # Git SSH agent script
-if [ -f ~/.git-ssh-agent.bash ]; then 
+if [ -f ~/.git-ssh-agent.bash ]; then
    source ~/.git-ssh-agent.bash
 fi
 
 # OSX ssh auto complete
-if [ -f ~/.ssh-complete.bash ]; then 
-   source ~/.ssh-complete.bash
+if [ -f ~/.ssh-complete.bash ]; then
+   source ~/.ssh-completion.bash
 fi
 
 # Git tab completion
-if [ ! -f ~/.git-completion.bash ]; then 
+if [ ! -f ~/.git-completion.bash ]; then
     curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 fi
 source ~/.git-completion.bash
 
 # homebrew tab completion
-if [ ! -f ~/.homebrew-completion.bash ]; then 
+if [ ! -f ~/.homebrew-completion.bash ]; then
    curl https://gist.github.com/ktheory/774554/raw/b5552619c8dcac38f954bcfb7bde9ff879de46fc/brew_completer.sh -o ~/.homebrew-completion.bash
 fi
 source ~/.homebrew-completion.bash
@@ -79,8 +79,13 @@ if [ -x "$(command -v kubectl)" ]; then
     source ~/.kubectl-completion.bash
 fi
 
+# kubectx completion
+if [ -f ~/.kubectx-completion.bash ]; then
+   source ~/.kubectx-completion.bash
+fi
+
 # Add the local system bash setup
-if [  -f ~/.local.bash ]; then 
+if [  -f ~/.local.bash ]; then
     source ~/.local.bash
 fi
 

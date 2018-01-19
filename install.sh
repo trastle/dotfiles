@@ -10,7 +10,7 @@ function doLink {
    elif [ -f ~/."$fileName" ]; then
        mv ~/."$fileName" ~/."$fileName"_old
    fi
-   ln -s `pwd`/"$fileName" ~/."$fileName" 
+   ln -s `pwd`/"$fileName" ~/."$fileName"
 }
 
 # Main
@@ -19,3 +19,5 @@ doLink bashrc
 doLink vimrc
 doLink inputrc
 doLink git-ssh-agent.bash
+doLink kubectx-completion.bash
+doLink ssh-complete.bash
