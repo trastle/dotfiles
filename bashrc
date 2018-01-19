@@ -14,7 +14,6 @@ alias ll="ls -la"
 alias ls='ls -G'
 alias quit='exit'
 alias reboot='shutdown -r now'
-alias installhomebrew='ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"'
 
 # improve bash history
 shopt -s histappend
@@ -67,6 +66,18 @@ if [ ! -f ~/.homebrew-completion.bash ]; then
    curl https://gist.github.com/ktheory/774554/raw/b5552619c8dcac38f954bcfb7bde9ff879de46fc/brew_completer.sh -o ~/.homebrew-completion.bash
 fi
 source ~/.homebrew-completion.bash
+
+# kops completion (if kops installed)
+if [ -x "$(command -v kops)" ]; then
+    kops completion bash >> ~/.kops-completion.bash
+    source ~/.kops-completion.bash
+fi
+
+# kubectl completion (if kubectl installed)
+if [ -x "$(command -v kubectl)" ]; then
+    kubectl completion bash >> ~/.kubectl-completion.bash
+    source ~/.kubectl-completion.bash
+fi
 
 # Add the local system bash setup
 if [  -f ~/.local.bash ]; then 
