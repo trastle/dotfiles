@@ -84,6 +84,11 @@ if [ -f ~/.kubectx-completion.bash ]; then
    source ~/.kubectx-completion.bash
 fi
 
+# terraform completion
+if [ -f ~/.terraform-completion.bash ]; then
+   source ~/.terraform-completion.bash
+fi
+
 # Add the local system bash setup
 if [  -f ~/.local.bash ]; then
     source ~/.local.bash

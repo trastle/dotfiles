@@ -20,4 +20,5 @@ doLink vimrc
 doLink inputrc
 doLink git-ssh-agent.bash
 doLink kubectx-completion.bash
-doLink ssh-complete.bash
+doLink ssh-completion.bash
+doLink terraform-completion.bash
